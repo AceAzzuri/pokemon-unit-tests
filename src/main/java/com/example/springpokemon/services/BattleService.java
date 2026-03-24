@@ -6,10 +6,14 @@ import com.example.springpokemon.repositories.PokedexRepository;
 import java.sql.SQLException;
 import java.util.NoSuchElementException;
 
-public class BattleService{
-    private PokedexRepository repo = new PokedexRepository();
+public class BattleService {
+    public PokedexRepository repo;
 
-    public String getWinnerName(Pokemon p1, Pokemon p2) throws SQLException{
+    public BattleService(PokedexRepository mockRepo) {
+        repo = mockRepo;
+    }
+
+    public String getWinnerName(Pokemon p1, Pokemon p2) throws SQLException {
         Pokemon pokemon1 = repo.getSingleById(p1.getPokedexNumber());
         Pokemon pokemon2 = repo.getSingleById(p2.getPokedexNumber());
 
@@ -26,8 +30,49 @@ public class BattleService{
         return "Draw";
     }
 
-    public String getArchetype(Pokemon pokemon){
+    public String getArchetype(Pokemon pokemon) {
         /* TODO */
         return null;
+    }
+
+    public String getAdvantage(int id1, int id2) throws SQLException {
+        Pokemon pokemon1 = repo.getSingleById(id1);
+        Pokemon pokemon2 = repo.getSingleById(id2);
+
+        if (pokemon1 == null || pokemon2 == null) {
+            throw new NoSuchElementException("Pokemon not found");
+        }
+
+        if (pokemon1.getPrimaryType().equals("Water") && pokemon2.getPrimaryType().equals("Fire")) {
+            return pokemon1.getName();
+        }
+        if (pokemon1.getPrimaryType().equals("Fire") && pokemon2.getPrimaryType().equals("Grass")) {
+            return pokemon1.getName();
+        }
+
+        if (pokemon1.getPrimaryType().equals("Grass") && pokemon2.getPrimaryType().equals("Water")) {
+            return pokemon1.getName();
+        }
+
+        if (pokemon2.getPrimaryType().equals("Water") && pokemon1.getPrimaryType().equals("Fire")) {
+            return pokemon2.getName();
+        }
+        if (pokemon2.getPrimaryType().equals("Fire") && pokemon1.getPrimaryType().equals("Grass")) {
+            return pokemon2.getName();
+        }
+
+        if (pokemon2.getPrimaryType().equals("Grass") && pokemon1.getPrimaryType().equals("Water")) {
+            return pokemon2.getName();
+        }
+        if (pokemon2.getPrimaryType().equals(pokemon1.getPrimaryType())) {
+            return "No advantage(Same pokemon type)";
+        }
+        if (!pokemon2.getPrimaryType().equals("Grass") || !pokemon2.getPrimaryType().equals("Fire") || !pokemon2.getPrimaryType().equals("Water")) {
+            return "No advantage for p2";
+        }
+        if (!pokemon1.getPrimaryType().equals("Grass") || !pokemon1.getPrimaryType().equals("Fire") || !pokemon1.getPrimaryType().equals("Water")) {
+            return "No advantage for p1";
+        }
+        else return "No advantage(Did not fullfill any criteria)";
     }
 }
