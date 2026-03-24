@@ -1,0 +1,9 @@
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/SpringPokemonApplication.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/controllers/PokedexController.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/exceptionhandling/GlobalExceptionHandler.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/models/Pokemon.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/repositories/IPokedexRepository.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/repositories/PokedexRepository.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/services/BattleService.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/services/PokedexService.java
+/Users/test/IdeaProjects/IntroduktionTilProgrammering/OleProgrammering/pokemon-unit-tests/src/main/java/com/example/springpokemon/utility/ConnectionManager.java

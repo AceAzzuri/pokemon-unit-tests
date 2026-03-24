@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>500 • DATABASE ERROR</title>
+
+  <link rel="stylesheet" th:href="@{/pokemon.css}">
+  <link rel="stylesheet" href="../../static/pokemon.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="brand">
+      <div class="pixel-icon"></div>
+      <div>
+        <h1>POKÉDEX TERMINAL</h1>
+        <div class="sub">SYSTEM ERROR</div>
+      </div>
+    </div>
+
+    <nav>
+      <a th:href="@{/pokemon/by-primary-type}">POKÉDEX</a>
+      <a th:href="@{/static}">HOME</a>
+    </nav>
+  </header>
+
+  <div class="card error-card">
+
+    <h2 class="error-code">500</h2>
+
+    <p class="error-text">
+      DATABASE TEMPORARILY UNAVAILABLE
+    </p>
+
+    <p class="small">
+      The Pokédex database cannot be reached right now.
+    </p>
+
+    <p class="small">
+      Please try again in a moment.
+    </p>
+
+    <div class="spacer"></div>
+
+    <a th:href="@{/pokemon/by-primary-type}" class="error-button">
+      TRY AGAIN
+    </a>
+
+  </div>
+
+  <footer class="footer">
+    <p>POKÉDEX TERMINAL • TRAINERS WELCOME</p>
+    <p class="small">PRESS START TO CONTINUE</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
